@@ -7,12 +7,12 @@ Once the server has reached "max" value (default = 100), it runs a "blowout" rou
 '
 
 # Files
-
+```
 src/
 ├── progress-server.py : This is an example frontend showing a web page with progress at port 5001
 ├── requirements.txt : Dependencies
 └── server.py : The api server that holds the state of the progress: port 5000
-
+```
 
 ## Installation
 
