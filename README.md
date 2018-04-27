@@ -28,10 +28,10 @@ pip install -r src/requirements.txt
 ## Test with curl
 
 1. To look at current status:
-curl -i <http://yourip:5000/api/info
+curl -i http://api-server-ip:5000/api/info
 
 2. To add weight to the server:
-curl -i <http://yourip:5000/api/add
+curl -i http://api-server-ip:5000/api/add
 
 In case you have reached "blowout" state (Winner!) blowout is set to True.
 The server will then run the "blowout" code.
