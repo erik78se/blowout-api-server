@@ -13,20 +13,20 @@ __info = {
 info = __info
 
 
-app = Flask(__name__)
+application = Flask(__name__)
 
 
-@app.route('/')
+@application.route('/')
 def index():
     return "Online!"
 
 
 # Shows basic info
-@app.route('/api/info', methods=['GET'])
+@application.route('/api/info', methods=['GET'])
 def get_info():
     return jsonify(info)
 
-@app.route('/api/add', methods=['GET'])
+@application.route('/api/add', methods=['GET'])
 def get_add():
     """
     A call to this function will add 1*increment to the weight.
@@ -51,4 +51,4 @@ def blowout():
     print("Blowout!")
 
 if __name__ == '__main__':
-    app.run(debug=True,host="0.0.0.0")
+    application.run(debug=True,host="0.0.0.0")
