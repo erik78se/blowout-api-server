@@ -40,5 +40,5 @@ parts:
     install: |
       rm $SNAPCRAFT_PART_INSTALL/nginx/conf/nginx.conf.default
       rm $SNAPCRAFT_PART_INSTALL/nginx/conf/nginx.conf
-      cp ./nginx.conf.snap.template $SNAPCRAFT_PART_INSTALL/nginx/conf/nginx.conf
-      touch $SNAPCRAFT_PART_INSTALL/nginx/conf/proxy_params
+      sed 's|_SNAPNAME_|borderlandblowout-api-server|g' nginx.conf.snap.template > $SNAPCRAFT_PART_INSTALL/nginx/conf/nginx.conf
+      cp ./nginx.proxy_params.snap.template $SNAPCRAFT_PART_INSTALL/nginx/conf/proxy_params

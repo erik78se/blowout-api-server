@@ -22,7 +22,7 @@ http {
 
         location / {
             include proxy_params;
-            proxy_pass http://unix:/var/snap/flask-nginx/common/flask-app/flask-app.sock;
+            proxy_pass http://unix:/var/snap/_SNAPNAME_/common/flask-app/flask-app.sock;
         }
     }
 }
