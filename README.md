@@ -8,7 +8,6 @@ Once the server has reached "max" value (default = 100), it runs a "blowout" rou
 
 # Files
 ```
-src/
 ├── progress-server.py : This is an example frontend showing a web page with progress at port 5001
 ├── requirements.txt : Dependencies
 └── server.py : The api server that holds the state of the progress: port 5000
@@ -16,7 +15,7 @@ src/
 
 ## Installation
 
-pip install -r src/requirements.txt
+pip install -r requirements.txt
 
 ## run the API server
 
@@ -39,3 +38,9 @@ The server will then run the "blowout" code.
 ## Check the status with browser
 
 http://<progress-server-ip:5001
+
+## Build a snap package for installation of api-server
+
+```
+snapcraft
+```
