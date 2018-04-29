@@ -13,4 +13,4 @@ chmod -R 777 $SNAP_COMMON/flask-app
 # Seems we need this since the wrappers are not created with this path form the snapcraft plugins
 export PYTHONPATH=$SNAP/lib/python3.5/site-packages/
 
-exec "$SNAP/bin/gunicorn" --chdir "$SNAP/flask-app" --bind "unix:$SNAP_COMMON/flask-app/flask-app.sock" server:app "$@"
+exec "$SNAP/bin/gunicorn" --chdir "$SNAP/flask-app" --bind "unix:$SNAP_COMMON/flask-app/flask-app.sock" wsgi "$@"
