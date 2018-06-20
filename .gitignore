@@ -1,3 +1,14 @@
+# snap
+prime
+stage
+*.snap
+
+#emacs
+*~
+
+# misc
+nohup.out
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
