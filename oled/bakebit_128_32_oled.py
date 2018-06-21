@@ -36,7 +36,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 '''
 
-import smbus
+import smbus2 as smbus
 import time
 import math
 import struct
@@ -49,8 +49,8 @@ SeeedOLED_Height		=32  #32  Pixels
 SeeedOLED_Max_X                 =SeeedOLED_Width-1
 SeeedOLED_Max_Y                 =SeeedOLED_Height-1
                                 
-PAGE_MODE                       =01
-HORIZONTAL_MODE                 =02
+PAGE_MODE                       =0o1
+HORIZONTAL_MODE                 =0o2
                                                             
 SeeedOLED_Address               =0x3d
 SeeedOLED_Command_Mode          =0x00
