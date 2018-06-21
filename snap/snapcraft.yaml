@@ -1,11 +1,15 @@
-name: borderlandblowout-api-server
+name: blowout-api-server
 version: '0.1' 
-summary: flask-nginx for borderlandblowout
+summary: API server for maintaining the state of a blowout counter.
 description: |
-  The borderland blowout api-server
-  Author: Erik Lonroth
+  Endpoint to get information in json: http://hostip:9999/api/info
+  Endpoint to increment by 1: http://hostip:9999/api/add
+  When server reaches 100, a blowout is triggerd
+  
+  Author: Erik Lonroth erik.lonroth@gmail.com
 
 grade: devel # must be 'stable' to release into candidate/stable channels
+
 confinement: devmode # use 'strict' once you have the right plugs and slots
 
 
@@ -23,7 +27,7 @@ apps:
 parts:
   flask-nginx:
     plugin: python
-    source: https://github.com/erik78se/borderlandblowout.git
+    source: https://github.com/erik78se/blowout-api-server.git 
     source-type: git
     python-version: python3
     requirements: requirements.txt
@@ -40,5 +44,5 @@ parts:
     install: |
       rm $SNAPCRAFT_PART_INSTALL/nginx/conf/nginx.conf.default
       rm $SNAPCRAFT_PART_INSTALL/nginx/conf/nginx.conf
-      sed 's|_SNAPNAME_|borderlandblowout-api-server|g' nginx.conf.snap.template > $SNAPCRAFT_PART_INSTALL/nginx/conf/nginx.conf
+      sed 's|_SNAPNAME_|blowout-api-server|g' nginx.conf.snap.template > $SNAPCRAFT_PART_INSTALL/nginx/conf/nginx.conf
       cp ./nginx.proxy_params.snap.template $SNAPCRAFT_PART_INSTALL/nginx/conf/proxy_params
